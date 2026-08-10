@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.denismasterherobrine.sablecontraptionsfix.mixin",
+  "plugin": "dev.denismasterherobrine.sablecontraptionsfix.mixin.SableContraptionsFixMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "sable.SubLevelHoldingChunkMapMixin",
+    "sable.SubLevelTrackingSystemMixin",
+    "sable.SubLevelHoldingChunkMixin",
+    "sable.SubLevelStorageMixin",
+    "sable.SubLevelSerializerMixin",
+    "sable.SubLevelPhysicsSystemHighLoadMixin",
+    "sable.client.ClientboundStartTrackingSubLevelPacketMixin",
+    "sable.worldborder.SubLevelPhysicsSystemWorldBorderMixin",
+    "coasters.CoasterCartTrainLinkConstraintMixin",
+    "coasters.CoasterCartPlotScanMixin"
+  ],
+  "client": [
+    "coasters.CoasterCartRailSoundCacheMixin"
+  ],
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
