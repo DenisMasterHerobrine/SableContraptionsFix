@@ -105,6 +105,9 @@ dependencies {
     compileOnly "curse.maven:create-coasters-simulated-1601871:${coasters_simulated_curse_file_id}"
     runtimeOnly "curse.maven:create-coasters-simulated-1601871:${coasters_simulated_curse_file_id}"
 
+    compileOnly "curse.maven:veil-lib-1517006:${veil_curse_file_id}"
+    runtimeOnly "curse.maven:veil-lib-1517006:${veil_curse_file_id}"
+
     compileOnly "dev.ryanhcode.sable-companion:sable-companion-common-${minecraft_version}:${sable_companion_version}"
 
 }

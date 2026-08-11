@@ -1,6 +1,5 @@
 package dev.denismasterherobrine.sablecontraptionsfix.mixin.sable.client;
 
-import dev.ryanhcode.sable.Sable;
 import dev.ryanhcode.sable.api.sublevel.ClientSubLevelContainer;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import dev.ryanhcode.sable.companion.math.BoundingBox3ic;
@@ -12,6 +11,7 @@ import dev.ryanhcode.sable.network.packets.tcp.ClientboundStartTrackingSubLevelP
 import dev.ryanhcode.sable.sublevel.ClientSubLevel;
 import dev.ryanhcode.sable.sublevel.SubLevel;
 import dev.ryanhcode.sable.sublevel.storage.SubLevelRemovalReason;
+import foundry.veil.api.network.handler.PacketContext;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +41,7 @@ public abstract class ClientboundStartTrackingSubLevelPacketMixin {
      * @reason A holding reload should refresh the existing render object, not remove and recreate it.
      */
     @Inject(method = "handle", at = @At("HEAD"), cancellable = true)
-    private void sablecontraptionsfix$refreshExistingRenderGhost(final @org.spongepowered.asm.mixin.injection.Coerce Object context, final CallbackInfo ci) {
+    private void sablecontraptionsfix$refreshExistingRenderGhost(PacketContext context, CallbackInfo ci) {
         final Level level = this.sablecontraptionsfix$level(context);
         final SubLevelContainer container = SubLevelContainer.getContainer(level);
         if (!(container instanceof final ClientSubLevelContainer clientContainer)) {
