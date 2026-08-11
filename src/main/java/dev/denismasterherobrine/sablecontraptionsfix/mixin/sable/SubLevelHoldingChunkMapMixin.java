@@ -120,13 +120,6 @@ public abstract class SubLevelHoldingChunkMapMixin {
                 break;
             }
 
-            /**
-             * Per-object load logging is intentionally suppressed.
-             * Large stress tests can load thousands of entries in one pass.
-             *
-             * @author DenisMasterHerobrine
-             * @reason Holding load diagnostics must stay bounded during stress tests.
-             */
             this.loadHoldingSubLevel(holdingSubLevel);
             loadedThisTick++;
         }
